@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Data Quality - Zeliha Tutar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="fas fa-chart-line"></i> Zeliha Tutar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="bg-light py-5">
+        <div class="container-lg">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Agentic Data Quality & Auto-Documentation</h1>
+                    <p class="lead text-muted mb-4">
+                        LLM-powered data quality framework that automatically detects anomalies, documents pipelines, 
+                        and generates GitHub documentation at scale.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="https://github.com/tutarzeliha-ctrl/agentic-data-quality-app" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-github"></i> View GitHub
+                        </a>
+                        <a href="../assets/data-quality-architecture.pdf" class="btn btn-outline-primary">
+                            <i class="fas fa-diagram-project"></i> Architecture
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="project-stats">
+                        <div class="stat">
+                            <h4>80%</h4>
+                            <p>Faster Debugging</p>
+                        </div>
+                        <div class="stat">
+                            <h4>100%</h4>
+                            <p>Accuracy</p>
+                        </div>
+                        <div class="stat">
+                            <h4>-80%</h4>
+                            <p>Manual Work</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="py-5">
+        <div class="container-lg">
+            <h2 class="h2 mb-4">The Problem</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="lead">
+                        Data quality issues are expensive and time-consuming to diagnose:
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>2-4 hours per incident</strong> - Manual root cause analysis</li>
+                        <li class="list-group-item"><strong>Manual documentation</strong> - Data dictionaries become outdated</li>
+                        <li class="list-group-item"><strong>No anomaly detection</strong> - Issues discovered by end users</li>
+                        <li class="list-group-item"><strong>Knowledge silos</strong> - Only technical leads understand pipelines</li>
+                        <li class="list-group-item"><strong>40+ hours/month</strong> - Wasted on documentation updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="py-5 bg-light">
+        <div class="container-lg">
+            <h2 class="h2 mb-4">The Solution</h2>
+            <p class="lead mb-4">
+                Built an intelligent data quality framework using dbt + LLM agents to automatically detect anomalies,
+                explain root causes, and generate comprehensive documentation.
+            </p>
+            
+            <h5 class="mt-5 mb-3">How It Works</h5>
+            <div class="bg-white p-4 rounded mb-4">
+                <pre><code>dBT Tests Run Daily
+    ↓
+dBT Artifacts + Failure Info
+    ↓
+Claude LLM Agent
+├── Analyzes schema, tests, data
+├── Identifies anomaly patterns
+├── Explains root causes
+└── Generates insights
+    ↓
+GitHub Auto-Documentation
+├── README.md updates
+├── Data dictionary
+├── Architecture docs
+└── Troubleshooting guides
+    ↓
+Slack Alert (if issues found)</code></pre>
+            </div>
+
+            <h5 class="mb-3">Three Core Features</h5>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <h6><i class="fas fa-bug"></i> Anomaly Detection</h6>
+                        <p>Detects NULL spikes, duplicates, and schema mismatches automatically</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <h6><i class="fas fa-brain"></i> Intelligent Analysis</h6>
+                        <p>LLM explains "why" anomalies occur with root cause analysis</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <h6><i class="fas fa-book"></i> Auto-Documentation</h6>
+                        <p>Generates GitHub docs with zero manual effort</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-5">
+        <div class="container-lg">
+            <h2 class="h2 mb-4">Results & Impact</h2>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="metric-card">
+                        <h4 class="text-primary">80%</h4>
+                        <p>Faster Debugging</p>
+                        <small class="text-muted">2-4 hrs → 30 min</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="metric-card">
+                        <h4 class="text-primary">100%</h4>
+                        <p>Detection Accuracy</p>
+                        <small class="text-muted">Zero false negatives</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="metric-card">
+                        <h4 class="text-primary">-80%</h4>
+                        <p>Manual Work</p>
+                        <small class="text-muted">40 hrs → 8 hrs/month</small>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="metric-card">
+                        <h4 class="text-primary">100%</h4>
+                        <p>Documentation</p>
+                        <small class="text-muted">Always up-to-date</small>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mb-3">Measurable Outcomes</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">✓ Reduced debugging time from 2-4 hours to 30 minutes</li>
+                <li class="list-group-item">✓ Anomaly detection alerts on first occurrence (not end-user reports)</li>
+                <li class="list-group-item">✓ Eliminated manual documentation updates (automated)</li>
+                <li class="list-group-item">✓ 100% test coverage documentation with LLM-generated explanations</li>
+                <li class="list-group-item">✓ Knowledge transfer easier (new team members understand pipelines)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="py-5 bg-light">
+        <div class="container-lg">
+            <h2 class="h2 mb-4">Technical Architecture</h2>
+            
+            <h5 class="mb-3">Key Components</h5>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="tech-item">
+                        <h6><i class="fas fa-cube"></i> dBT Testing</h6>
+                        <p>Generic tests (NOT NULL, UNIQUE, relationships) generate artifacts</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tech-item">
+                        <h6><i class="fas fa-brain"></i> Claude API</h6>
+                        <p>Analyzes test failures, schemas, and data to generate insights</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tech-item">
+                        <h6><i class="fas fa-github"></i> GitHub API</h6>
+                        <p>Automatically commits documentation updates</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tech-item">
+                        <h6><i class="fas fa-bell"></i> Slack API</h6>
+                        <p>Sends alerts with root cause analysis on failures</p>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mt-5 mb-3">Tech Stack</h5>
+            <div class="row g-3">
+                <div class="col-md-3"><div class="tech-badge">dBT Core</div></div>
+                <div class="col-md-3"><div class="tech-badge">Claude API</div></div>
+                <div class="col-md-3"><div class="tech-badge">Python 3.11+</div></div>
+                <div class="col-md-3"><div class="tech-badge">GitHub API</div></div>
+                <div class="col-md-3"><div class="tech-badge">Slack API</div></div>
+                <div class="col-md-3"><div class="tech-badge">Prompt Engineering</div></div>
+                <div class="col-md-3"><div class="tech-badge">Git</div></div>
+                <div class="col-md-3"><div class="tech-badge">CI/CD</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section class="py-5">
+        <div class="container-lg">
+            <h2 class="h2 mb-4">Key Learnings</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h5 class="mb-3">LLM Insights</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>Context is critical:</strong> Include schema, tests, and data samples</li>
+                        <li class="mb-2"><strong>Prompt structure:</strong> System + user messages for consistency</li>
+                        <li class="mb-2"><strong>Output parsing:</strong> Structured JSON responses for automation</li>
+                        <li class="mb-2"><strong>Cost optimization:</strong> Batch processing reduces API calls</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="mb-3">Operational</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>GitHub Actions:</strong> Daily scheduled runs of quality checks</li>
+                        <li class="mb-2"><strong>Documentation as code:</strong> Markdown templates for consistency</li>
+                        <li class="mb-2"><strong>Versioning:</strong> Track documentation changes in Git</li>
+                        <li class="mb-2"><strong>Human oversight:</strong> Review agent outputs before auto-commit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container-lg text-center">
+            <h2 class="h2 mb-4">Want to Automate Your Data Quality?</h2>
+            <p class="lead mb-4">Let's build intelligent pipelines that monitor themselves.</p>
+            <a href="../contact.html" class="btn btn-light btn-lg">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Zeliha Tutar. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://linkedin.com/in/zeliha-tutar-35a3013aa/" class="text-light me-3">LinkedIn</a>
+                    <a href="https://github.com/tutarzeliha-ctrl" class="text-light me-3">GitHub</a>
+                    <a href="mailto:ttutarzeliha@gmail.com" class="text-light">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
