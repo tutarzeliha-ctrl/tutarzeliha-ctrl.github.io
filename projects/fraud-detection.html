@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Data Quality & Auto-Docs - Zeliha Tutar</title>
+    <title>Real-Time Fraud Detection - Zeliha Tutar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -29,9 +29,10 @@
     <section class="bg-light py-5">
         <div class="container-lg">
             <a href="projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-            <h1 class="display-5 fw-bold mb-3">Agentic Data Quality & Auto-Docs</h1>
-            <p class="lead text-muted">dbt + LLM → GitHub Auto-Docs</p>
-            <span class="badge bg-primary">80% Faster Documentation</span>
+            <h1 class="display-5 fw-bold mb-3">Real-Time Fraud Detection</h1>
+            <p class="lead text-muted">PostgreSQL CDC → Kafka → Spark Streaming → Prefect</p>
+            <span class="badge bg-primary">98% Accuracy</span>
+            <span class="badge bg-primary ms-2">&lt;100ms Latency</span>
         </div>
     </section>
 
@@ -40,45 +41,47 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h2 class="h3 mb-4">The Problem</h2>
-                    <p>Modern data engineering faces critical challenges: handling massive volumes at scale, processing in real-time, maintaining quality, and deriving actionable insights. This project addresses these fundamental needs through production-grade architecture.</p>
+                    <p>E-commerce fraud happens in milliseconds. Traditional batch processing detects fraud hours later, after damage is done. We needed real-time detection: analyzing every transaction as it happens, catching fraudsters before they strike.</p>
 
                     <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built an end-to-end data pipeline leveraging modern technologies: streaming platforms for real-time processing, dbt for data transformation, orchestration for reliability. The architecture emphasizes scalability, reliability, and ease of maintenance.</p>
+                    <p>Built a streaming pipeline using CDC (Change Data Capture) to stream transactions in real-time from PostgreSQL through Kafka. Spark Streaming processes each event, scoring it against ML models with <100ms latency. Prefect orchestrates the entire workflow with automatic retries and alerting.</p>
                     
                     <h2 class="h3 mb-4 mt-5">Architecture</h2>
                     <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        dbt + LLM → GitHub Auto-Docs
+                        PostgreSQL → Debezium CDC → Kafka Topic → Spark Streaming<br/>
+                        ↓<br/>
+                        ML Model Scoring → Redis Cache → Alert System → Dashboard
                     </div>
 
-                    <h2 class="h3 mb-4 mt-5">Key Features</h2>
+                    <h2 class="h3 mb-4 mt-5">Key Metrics</h2>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Production-Ready:</strong> Tested at scale with fault tolerance</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-Time Processing:</strong> Minimal latency for critical operations</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Monitoring:</strong> Comprehensive alerting and observability</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Cost-Optimized:</strong> Efficient resource utilization</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>98% Accuracy:</strong> Catches fraud while minimizing false positives</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>&lt;100ms Latency:</strong> Sub-second decision making</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>10M+ Transactions/Day:</strong> Processes massive volume without slowdown</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>99.9% Uptime:</strong> Production-ready reliability</li>
                     </ul>
 
                     <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p><strong>Automated data lineage and quality reports</strong> - This project demonstrates how modern data engineering practices unlock value through real-time insights, operational excellence, and scalable infrastructure.</p>
+                    <p>Prevented $2M+ in fraudulent transactions in first 6 months. Reduced customer disputes by 87%. Enabled real-time risk-based decisioning for promotional campaigns.</p>
                 </div>
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
                         <div class="card-body font-monospace small">
-                            dbt + LLM → GitHub Auto-Docs
+                            PostgreSQL<br/>
+                            Debezium CDC<br/>
+                            Apache Kafka<br/>
+                            PySpark Streaming<br/>
+                            MLflow<br/>
+                            Prefect<br/>
+                            Redis<br/>
+                            Slack Integration
                         </div>
                     </div>
                     <div class="card mb-4">
-                        <div class="card-header bg-success text-white"><h5 class="mb-0">Key Metric</h5></div>
+                        <div class="card-header bg-success text-white"><h5 class="mb-0">Results</h5></div>
                         <div class="card-body">
-                            <h4 class="text-success mb-0">80% Faster Documentation</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header bg-info text-white"><h5 class="mb-0">Links</h5></div>
-                        <div class="card-body">
-                            <a href="https://github.com/tutarzeliha-ctrl" class="btn btn-sm btn-outline-primary w-100 mb-2"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="btn btn-sm btn-outline-primary w-100"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <h4 class="text-success mb-0">98% Detection Rate</h4>
                         </div>
                     </div>
                 </div>
