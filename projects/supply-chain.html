@@ -4,100 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supply Chain Delay Predictor - Zeliha Tutar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-lg">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Zeliha Tutar</div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#projects">Projects</a></li>
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-detail-container">
+        <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
+        
+        <div class="project-header">
+            <h1>Supply Chain Delay Predictor</h1>
+            <p class="project-subtitle">Kafka → PySpark ML → LLM Agents</p>
+            <span class="metric-badge">82% Accuracy</span>
         </div>
-    </nav>
 
-    <section class="bg-light py-5">
-        <div class="container-lg">
-            <a href="projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-            <h1 class="display-5 fw-bold mb-3">Supply Chain Delay Predictor</h1>
-            <p class="lead text-muted">Kafka → PySpark ML → LLM Agents</p>
-            <span class="badge bg-primary">82% Accuracy</span>
-        </div>
-    </section>
+        <div class="project-content-grid">
+            <div class="project-main">
+                <section>
+                    <h2>The Problem</h2>
+                    <p>Global supply chains face constant disruptions due to unexpected weather, port congestion, and logistical bottlenecks. Traditional reactive tracking systems only report delays after they occur, costing companies millions in operational inefficiencies and failing to provide actionable mitigation steps in real time.</p>
+                </section>
 
-    <section class="py-5">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="h3 mb-4">The Problem</h2>
-                    <p>Modern data engineering faces critical challenges: handling massive volumes at scale, processing in real-time, maintaining quality, and deriving actionable insights. This project addresses these fundamental needs through production-grade architecture.</p>
+                <section>
+                    <h2>The Solution</h2>
+                    <p>An end-to-end predictive pipeline that ingests live shipment telemetry via Kafka, processes features at scale using PySpark ML to forecast delivery risks with 82% accuracy, and integrates LLM agents to automatically generate root-cause analysis and operational mitigation strategies.</p>
+                </section>
 
-                    <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built an end-to-end data pipeline leveraging modern technologies: streaming platforms for real-time processing, dbt for data transformation, orchestration for reliability. The architecture emphasizes scalability, reliability, and ease of maintenance.</p>
-                    
-                    <h2 class="h3 mb-4 mt-5">Architecture</h2>
-                    <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        Kafka → PySpark ML → LLM Agents
+                <section>
+                    <h2>Architecture</h2>
+                    <div class="code-block">
+                        Kafka (Telemetry Streams) → PySpark ML (Risk Classification Pipeline) → LLM Agents (Actionable Insights)
                     </div>
+                </section>
 
-                    <h2 class="h3 mb-4 mt-5">Key Features</h2>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Production-Ready:</strong> Tested at scale with fault tolerance</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-Time Processing:</strong> Minimal latency for critical operations</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Monitoring:</strong> Comprehensive alerting and observability</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Cost-Optimized:</strong> Efficient resource utilization</li>
+                <section>
+                    <h2>Key Features</h2>
+                    <ul class="feature-list">
+                        <li>✓ <strong>Real-Time Ingestion:</strong> Continuous telemetry streaming using Apache Kafka.</li>
+                        <li>✓ <strong>Scalable Machine Learning:</strong> Distributed model training and inference via PySpark ML.</li>
+                        <li>✓ <strong>Automated Reasoning:</strong> LLM agents summarizing risk factors and operational impacts.</li>
+                        <li>✓ <strong>Proactive Alerting:</strong> Early warning system providing actionable mitigation insights.</li>
                     </ul>
+                </section>
 
-                    <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p><strong>6-hour early warning system</strong> - This project demonstrates how modern data engineering practices unlock value through real-time insights, operational excellence, and scalable infrastructure.</p>
+                <section>
+                    <h2>Business Impact</h2>
+                    <p><strong>6-hour early warning system:</strong> This project empowers logistics teams to anticipate delays hours before they cascade, optimizing inventory buffers, reducing demurrage costs, and ensuring exceptional service reliability.</p>
+                </section>
+            </div>
+
+            <div class="project-sidebar">
+                <div class="sidebar-card">
+                    <h3>Tech Stack</h3>
+                    <p>Kafka → PySpark ML → LLM Agents</p>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
-                        <div class="card-body font-monospace small">
-                            Kafka → PySpark ML → LLM Agents
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white"><h5 class="mb-0">Key Metric</h5></div>
-                        <div class="card-body">
-                            <h4 class="text-success mb-0">82% Accuracy</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header bg-info text-white"><h5 class="mb-0">Links</h5></div>
-                        <div class="card-body">
-                            <a href="https://github.com/tutarzeliha-ctrl" class="btn btn-sm btn-outline-primary w-100 mb-2"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="btn btn-sm btn-outline-primary w-100"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        </div>
-                    </div>
+                <div class="sidebar-card metric-card">
+                    <h3>Key Metric</h3>
+                    <p class="highlight-metric">82% Accuracy</p>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Links</h3>
+                    <a href="https://github.com/tutarzeliha-ctrl" target="_blank" class="btn github-btn">GitHub</a>
+                    <a href="https://linkedin.com/in/zeliha-tutar" target="_blank" class="btn linkedin-btn">LinkedIn</a>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-md-6"><p class="mb-0">&copy; 2024 Zeliha Tutar. All rights reserved.</p></div>
-                <div class="col-md-6 text-md-end">
-                    <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="text-light me-3">LinkedIn</a>
-                    <a href="https://github.com/tutarzeliha-ctrl" class="text-light me-3">GitHub</a>
-                    <a href="mailto:ttutarzeliha@gmail.com" class="text-light">Email</a>
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 Zeliha Tutar. All rights reserved.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
