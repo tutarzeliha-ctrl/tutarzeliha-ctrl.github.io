@@ -5,33 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Dynamic Pricing - Zeliha Tutar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-lg">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
+            <a class="navbar-brand fw-bold" href="#">Zeliha Tutar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="bg-light py-5">
+    <section class="py-5 bg-white border-bottom">
         <div class="container-lg">
-            <a href="projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-            <h1 class="display-5 fw-bold mb-3">E-Commerce Dynamic Pricing</h1>
-            <p class="lead text-muted">Web Scraping → BigQuery dbt → LLM</p>
-            <span class="badge bg-primary">12% Margin Increase</span>
+            <a href="../index.html#projects" class="text-decoration-none text-muted mb-3 d-inline-block"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold text-dark">E-Commerce Dynamic Pricing Engine</h1>
+                    <p class="text-secondary h5">Real-Time Pricing Pipeline → ML Optimization</p>
+                    <span class="badge bg-success fs-6">Real-Time Optimization</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -39,46 +44,56 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-lg-8">
-                    <h2 class="h3 mb-4">The Problem</h2>
-                    <p>Modern data engineering faces critical challenges: handling massive volumes at scale, processing in real-time, maintaining quality, and deriving actionable insights. This project addresses these fundamental needs through production-grade architecture.</p>
-
-                    <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built an end-to-end data pipeline leveraging modern technologies: streaming platforms for real-time processing, dbt for data transformation, orchestration for reliability. The architecture emphasizes scalability, reliability, and ease of maintenance.</p>
-                    
-                    <h2 class="h3 mb-4 mt-5">Architecture</h2>
-                    <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        Web Scraping → BigQuery dbt → LLM
+                    <div class="mb-4">
+                        <h2 class="h3 mb-3 text-dark">The Problem</h2>
+                        <p class="text-secondary lh-lg">Static pricing models in e-commerce fail to respond quickly to market fluctuations, competitor price changes, and shifting demand elasticity, resulting in missed margin opportunities or lost sales conversion.</p>
                     </div>
 
-                    <h2 class="h3 mb-4 mt-5">Key Features</h2>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Production-Ready:</strong> Tested at scale with fault tolerance</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-Time Processing:</strong> Minimal latency for critical operations</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Monitoring:</strong> Comprehensive alerting and observability</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Cost-Optimized:</strong> Efficient resource utilization</li>
-                    </ul>
+                    <div class="mb-4">
+                        <h2 class="h3 mb-3 text-dark">The Solution</h2>
+                        <p class="text-secondary lh-lg">An automated dynamic pricing engine built to evaluate competitor pricing telemetry and demand signals in real time, executing optimization algorithms to compute and update competitive product prices instantly.</p>
+                    </div>
 
-                    <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p><strong>AI-driven pricing optimization</strong> - This project demonstrates how modern data engineering practices unlock value through real-time insights, operational excellence, and scalable infrastructure.</p>
+                    <div class="mb-4">
+                        <h2 class="h3 mb-3 text-dark">Architecture Flow</h2>
+                        <div class="bg-dark text-white p-4 rounded mb-4 font-monospace small">
+                            <i class="fa-solid fa-network-wired text-success me-2"></i> Competitor Scrapers / Kafka → Python ML Engine → Automated Price Updates
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h2 class="h3 mb-3 text-dark">Key Engineering Highlights</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fa-solid fa-check text-success me-2"></i><strong>Real-Time Telemetry:</strong> Ingested continuous market and competitor feeds to track price positioning.</li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-success me-2"></i><strong>Elasticity Modeling:</strong> Developed automated pricing rules and ML algorithms to maximize revenue and margin.</li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-success me-2"></i><strong>Automated Execution:</strong> Deployed safe execution pipelines to push updated prices directly to e-commerce storefronts.</li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-success me-2"></i><strong>Guardrails & Alerts:</strong> Implemented boundary constraints and anomaly detection to prevent extreme pricing shifts.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h2 class="h3 mb-3 text-dark">Business Impact</h2>
+                        <p class="text-secondary lh-lg"><strong>Revenue & Margin Growth:</strong> Maximizes profitability by dynamically capturing high-demand windows and maintaining competitive edge without manual oversight.</p>
+                    </div>
                 </div>
+
                 <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
-                        <div class="card-body font-monospace small">
-                            Web Scraping → BigQuery dbt → LLM
+                    <div class="card shadow-sm mb-4 border-0">
+                        <div class="card-header bg-success text-white fw-bold">Tech Stack</div>
+                        <div class="card-body">
+                            <span class="badge bg-secondary m-1">Python</span>
+                            <span class="badge bg-secondary m-1">Pandas</span>
+                            <span class="badge bg-secondary m-1">Scikit-Learn</span>
+                            <span class="badge bg-secondary m-1">PostgreSQL</span>
+                            <span class="badge bg-secondary m-1">Docker</span>
                         </div>
                     </div>
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white"><h5 class="mb-0">Key Metric</h5></div>
-                        <div class="card-body">
-                            <h4 class="text-success mb-0">12% Margin Increase</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header bg-info text-white"><h5 class="mb-0">Links</h5></div>
-                        <div class="card-body">
-                            <a href="https://github.com/tutarzeliha-ctrl" class="btn btn-sm btn-outline-primary w-100 mb-2"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="btn btn-sm btn-outline-primary w-100"><i class="fab fa-linkedin"></i> LinkedIn</a>
+
+                    <div class="card shadow-sm mb-4 border-0">
+                        <div class="card-header bg-dark text-white fw-bold">Project Links</div>
+                        <div class="card-body d-grid gap-2">
+                            <a href="https://github.com/tutarzeliha-ctrl" target="_blank" class="btn btn-outline-dark"><i class="fa-brands fa-github me-2"></i>GitHub Repository</a>
+                            <a href="https://linkedin.com/in/zeliha-tutar" target="_blank" class="btn btn-outline-primary"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn Profile</a>
                         </div>
                     </div>
                 </div>
@@ -86,18 +101,12 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-md-6"><p class="mb-0">&copy; 2024 Zeliha Tutar. All rights reserved.</p></div>
-                <div class="col-md-6 text-md-end">
-                    <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="text-light me-3">LinkedIn</a>
-                    <a href="https://github.com/tutarzeliha-ctrl" class="text-light me-3">GitHub</a>
-                    <a href="mailto:ttutarzeliha@gmail.com" class="text-light">Email</a>
-                </div>
-            </div>
+    <footer class="bg-dark text-light py-4">
+        <div class="container-lg text-center">
+            <p class="mb-0 small">&copy; 2026 Zeliha Tutar. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
