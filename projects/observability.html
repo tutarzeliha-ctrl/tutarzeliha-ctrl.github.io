@@ -6,21 +6,21 @@
     <title>Enterprise Data Observability - Zeliha Tutar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-lg">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
+            <a class="navbar-brand fw-bold" href="../index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -28,9 +28,9 @@
 
     <section class="bg-light py-5">
         <div class="container-lg">
-            <a href="projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <a href="../projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
             <h1 class="display-5 fw-bold mb-3">Enterprise Data Observability</h1>
-            <p class="lead text-muted">Snowflake + Databricks Monitoring</p>
+            <p class="lead text-muted">Airflow + Streamlit + Slack Webhooks Data Pipeline</p>
             <span class="badge bg-primary">99.9% Reliability</span>
         </div>
     </section>
@@ -39,33 +39,36 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-lg-8">
-                    <h2 class="h3 mb-4">The Problem</h2>
-                    <p>Modern data engineering faces critical challenges: handling massive volumes at scale, processing in real-time, maintaining quality, and deriving actionable insights. This project addresses these fundamental needs through production-grade architecture.</p>
+                    <h2 class="h3 mb-4">Executive Summary & Problem</h2>
+                    <p>Modern enterprise data platforms face critical challenges: handling massive volumes at scale, maintaining zero-defect data quality, tracking schema evolution, and delivering actionable operational insights. This project addresses these fundamental enterprise needs through a production-grade automated pipeline.</p>
 
                     <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built an end-to-end data pipeline leveraging modern technologies: streaming platforms for real-time processing, dbt for data transformation, orchestration for reliability. The architecture emphasizes scalability, reliability, and ease of maintenance.</p>
+                    <p>Built an end-to-end data quality validation and governance pipeline using Apache Airflow for orchestration, declarative YAML/SQL rules for validation, Streamlit for real-time observability dashboards, and Slack webhooks for immediate incident management.</p>
                     
                     <h2 class="h3 mb-4 mt-5">Architecture</h2>
                     <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        Snowflake + Databricks Monitoring
+                        [ Raw Data Ingestion ] ──> [ Airflow Orchestration & Quality Checks ] ──> [ Audit & Governance Logs ]<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──> [ Streamlit Health Dashboard ]<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──> [ Real-time Slack Webhook Alerts ]
                     </div>
 
                     <h2 class="h3 mb-4 mt-5">Key Features</h2>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Production-Ready:</strong> Tested at scale with fault tolerance</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-Time Processing:</strong> Minimal latency for critical operations</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Monitoring:</strong> Comprehensive alerting and observability</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Cost-Optimized:</strong> Efficient resource utilization</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Data Quality Validation:</strong> Declarative SQL & Python rules verifying null rates and schema integrity.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Orchestration & Workflow Management:</strong> Robust Apache Airflow DAG execution with custom retry policies.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-time Observability:</strong> Streamlit-powered dashboard tracking pipeline telemetry and health metrics.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Incident Notification:</strong> Immediate webhook dispatches to Slack upon data quality violations.</li>
                     </ul>
 
                     <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p><strong>System-wide data health visibility</strong> - This project demonstrates how modern data engineering practices unlock value through real-time insights, operational excellence, and scalable infrastructure.</p>
+                    <p><strong>Proactive Quality Governance:</strong> Achieves 99.9% pipeline reliability by catching data corruption and schema drift before impacting downstream consumers, eliminating operational blind spots across the enterprise stack.</p>
                 </div>
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
                         <div class="card-body font-monospace small">
-                            Snowflake + Databricks Monitoring
+                            Python, Apache Airflow, Streamlit, Slack Webhooks, Docker
                         </div>
                     </div>
                     <div class="card mb-4">
@@ -77,8 +80,9 @@
                     <div class="card">
                         <div class="card-header bg-info text-white"><h5 class="mb-0">Links</h5></div>
                         <div class="card-body">
-                            <a href="https://github.com/tutarzeliha-ctrl" class="btn btn-sm btn-outline-primary w-100 mb-2"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="btn btn-sm btn-outline-primary w-100"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/tutarzeliha-ctrl/enterprise-data-observability" class="btn btn-sm btn-outline-primary w-100 mb-2" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+                            <a href="https://enterprise-data-observability-3jqvuelxyojj9rrakcncbw.streamlit.app/" class="btn btn-sm btn-outline-success w-100 mb-2" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://www.youtube.com/watch?v=PZubpk3ZDHY" class="btn btn-sm btn-outline-danger w-100" target="_blank"><i class="fab fa-youtube"></i> Video Walkthrough</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +93,7 @@
     <footer class="bg-dark text-light py-4 mt-5">
         <div class="container-lg">
             <div class="row">
-                <div class="col-md-6"><p class="mb-0">&copy; 2024 Zeliha Tutar. All rights reserved.</p></div>
+                <div class="col-md-6"><p class="mb-0">&copy; 2026 Zeliha Tutar. All rights reserved.</p></div>
                 <div class="col-md-6 text-md-end">
                     <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="text-light me-3">LinkedIn</a>
                     <a href="https://github.com/tutarzeliha-ctrl" class="text-light me-3">GitHub</a>
