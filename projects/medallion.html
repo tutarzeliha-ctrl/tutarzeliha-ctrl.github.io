@@ -30,7 +30,7 @@
         <div class="container-lg">
             <a href="projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
             <h1 class="display-5 fw-bold mb-3">Medallion Architecture (Airflow)</h1>
-            <p class="lead text-muted">Bronze/Silver/Gold → Airflow DAGs</p>
+            <p class="lead text-muted">Python, Apache Airflow, Pandas & End-to-End Data Pipeline</p>
             <span class="badge bg-primary">40% Efficiency Gain</span>
         </div>
     </section>
@@ -40,32 +40,32 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h2 class="h3 mb-4">The Problem</h2>
-                    <p>Modern data engineering faces critical challenges: handling massive volumes at scale, processing in real-time, maintaining quality, and deriving actionable insights. This project addresses these fundamental needs through production-grade architecture.</p>
+                    <p>Modern data engineering faces critical challenges: handling massive volumes at scale, processing reliably, maintaining data quality, and deriving actionable insights. This project addresses these fundamental needs through production-grade architecture.</p>
 
                     <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built an end-to-end data pipeline leveraging modern technologies: streaming platforms for real-time processing, dbt for data transformation, orchestration for reliability. The architecture emphasizes scalability, reliability, and ease of maintenance.</p>
+                    <p>Built an end-to-end data pipeline leveraging modern technologies: Python ingestion scripts for raw data collection, Pandas for data cleansing, and Apache Airflow for robust workflow orchestration.</p>
                     
                     <h2 class="h3 mb-4 mt-5">Architecture</h2>
                     <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        Bronze/Silver/Gold → Airflow DAGs
+                        Source API → Python Ingestion (Bronze Layer) → Pandas Cleansing (Silver Layer) → Airflow DAGs
                     </div>
 
                     <h2 class="h3 mb-4 mt-5">Key Features</h2>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Production-Ready:</strong> Tested at scale with fault tolerance</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-Time Processing:</strong> Minimal latency for critical operations</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Monitoring:</strong> Comprehensive alerting and observability</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Cost-Optimized:</strong> Efficient resource utilization</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Production-Ready:</strong> Tested at scale with fault tolerance and structured error handling.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Orchestration:</strong> DAGs configured with retry mechanisms and daily schedules.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Layered Storage:</strong> Clear separation between raw Bronze JSON storage and cleansed Silver records.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Modular Codebase:</strong> Reusable Python scripts organized in a clean directory structure.</li>
                     </ul>
 
                     <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p><strong>Scalable data lakehouse framework</strong> - This project demonstrates how modern data engineering practices unlock value through real-time insights, operational excellence, and scalable infrastructure.</p>
+                    <p><strong>Scalable data lakehouse framework</strong> - This project demonstrates how modern data engineering practices unlock value through operational excellence and reliable data pipelines.</p>
                 </div>
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
                         <div class="card-body font-monospace small">
-                            Bronze/Silver/Gold → Airflow DAGs
+                            Python, Apache Airflow, Pandas, PyArrow, JSON/Parquet, Git
                         </div>
                     </div>
                     <div class="card mb-4">
