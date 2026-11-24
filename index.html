@@ -41,9 +41,9 @@
                         Analytics Engineer
                     </h2>
                     <p class="lead text-light mb-4">
-                        Analytics engineer building end-to-end pipelines with dbt, BigQuery and Airflow
-                        on real e-commerce data, with a background in e-commerce operations.
-                        I also prototype LLM-assisted data quality tooling.
+                        Analytics engineer building tested, monitored pipelines, from PostgreSQL
+                        change data capture through dbt models to Airflow checks.
+                        8+ years in e-commerce operations.
                     </p>
 
                     <!-- Tech Stack Badges -->
@@ -56,6 +56,9 @@
                         <span class="badge bg-info">Snowflake</span>
                         <span class="badge bg-info">Databricks</span>
                         <span class="badge bg-info">Kafka</span>
+                        <span class="badge bg-info">Debezium</span>
+                        <span class="badge bg-info">DuckDB</span>
+                        <span class="badge bg-info">Docker</span>
                         <span class="badge bg-info">PySpark</span>
                         <span class="badge bg-info">LLM APIs</span>
                     </div>
@@ -65,7 +68,7 @@
                         <a href="projects.html" class="btn btn-primary btn-lg">
                             <i class="fas fa-rocket"></i> View Projects
                         </a>
-                        <a href="assets/Zeliha_Tutar_Analytics_Engineer_CV.docx" class="btn btn-outline-light btn-lg">
+                        <a href="assets/Zeliha_Tutar_CV.pdf" class="btn btn-outline-light btn-lg">
                             <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
@@ -86,12 +89,12 @@
                 <div class="col-lg-4 text-center">
                     <div class="hero-stats">
                         <div class="stat-box">
-                            <h3 class="text-white">10 yrs</h3>
+                            <h3 class="text-white">8+ yrs</h3>
                             <p class="text-light">E-commerce operations</p>
                         </div>
                         <div class="stat-box">
-                            <h3 class="text-white">2</h3>
-                            <p class="text-light">End-to-end projects with code</p>
+                            <h3 class="text-white">3</h3>
+                            <p class="text-light">Public projects with code</p>
                         </div>
                         <div class="stat-box">
                             <h3 class="text-white">dbt + BigQuery</h3>
@@ -108,8 +111,29 @@
         <div class="container-lg">
             <h2 class="h2 mb-5 text-center">Featured Projects</h2>
             <div class="row g-4">
-                <!-- Project 1: Sepetix -->
-                <div class="col-md-6">
+                <!-- Project 1: Real-Time CDC Lakehouse (flagship) -->
+                <div class="col-md-4">
+                    <div class="project-card h-100">
+                        <div class="project-icon">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <h5>Real-Time CDC Lakehouse</h5>
+                        <p class="small text-muted">PostgreSQL → Debezium → Kafka → DuckDB/Parquet → dbt → Airflow (local Docker)</p>
+                        <div class="project-metrics">
+                            <span class="metric">Debezium + Kafka CDC</span>
+                            <span class="metric">Replay tested</span>
+                            <span class="metric">dbt + Airflow checks</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap mt-3">
+                            <a href="https://github.com/tutarzeliha-ctrl/realtime-cdc-lakehouse" target="_blank" class="btn btn-sm btn-outline-primary">GitHub →</a>
+                            <a href="https://github.com/tutarzeliha-ctrl/realtime-cdc-lakehouse/releases/tag/v1.2" target="_blank" class="btn btn-sm btn-outline-secondary">v1.2 release</a>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7530941389451362304/" target="_blank" class="btn btn-sm btn-outline-secondary">Demo video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Sepetix -->
+                <div class="col-md-4">
                     <div class="project-card h-100">
                         <div class="project-icon">
                             <i class="fas fa-database"></i>
@@ -127,8 +151,8 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Agentic Data Quality -->
-                <div class="col-md-6">
+                <!-- Project 3: Agentic Data Quality -->
+                <div class="col-md-4">
                     <div class="project-card h-100">
                         <div class="project-icon">
                             <i class="fas fa-robot"></i>
