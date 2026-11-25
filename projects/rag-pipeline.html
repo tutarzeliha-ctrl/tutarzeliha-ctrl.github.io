@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local RAG Data Pipeline - Zeliha Tutar</title>
+    <title>Local RAG Pipeline - Zeliha Tutar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-lg">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand fw-bold" href="../index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -28,58 +26,39 @@
 
     <section class="bg-light py-5">
         <div class="container-lg">
-            <a href="projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-            <h1 class="display-5 fw-bold mb-3">Local RAG Data Pipeline</h1>
-            <p class="lead text-muted">ChromaDB + LangChain → Semantic Search</p>
-            <span class="badge bg-primary"><10 Sec Queries</span>
+            <a href="../projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <h1 class="display-5 fw-bold mb-3">Local RAG Pipeline</h1>
+            <p class="lead text-muted mb-2">LangChain text splitting → local embeddings → ChromaDB</p>
+            <span class="badge bg-secondary">Portfolio project · runs locally · synthetic data</span>
         </div>
     </section>
 
     <section class="py-5">
         <div class="container-lg">
-            <div class="row">
+            <div class="row g-5">
                 <div class="col-lg-8">
-                    <h2 class="h3 mb-4">The Problem</h2>
-                    <p>Modern data engineering faces critical challenges: handling massive volumes at scale, processing in real-time, maintaining quality, and deriving actionable insights. This project addresses these fundamental needs through production-grade architecture.</p>
+                    <h2 class="h4 mb-3">What it does</h2>
+                    <p>Loads text and PDF files, splits them into chunks, embeds them locally with all-MiniLM-L6-v2 and stores them in ChromaDB. For a question, it retrieves the closest chunks and builds a context-augmented prompt.</p>
 
-                    <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built an end-to-end data pipeline leveraging modern technologies: streaming platforms for real-time processing, dbt for data transformation, orchestration for reliability. The architecture emphasizes scalability, reliability, and ease of maintenance.</p>
-                    
-                    <h2 class="h3 mb-4 mt-5">Architecture</h2>
-                    <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        ChromaDB + LangChain → Semantic Search
-                    </div>
-
-                    <h2 class="h3 mb-4 mt-5">Key Features</h2>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Production-Ready:</strong> Tested at scale with fault tolerance</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-Time Processing:</strong> Minimal latency for critical operations</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Monitoring:</strong> Comprehensive alerting and observability</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Cost-Optimized:</strong> Efficient resource utilization</li>
+                    <h2 class="h4 mt-5 mb-3">What is in the repository</h2>
+                    <ul>
+                        <li><code>ingestion.py</code>: loading and chunking</li>
+                        <li><code>embedding.py</code>: local embeddings</li>
+                        <li><code>vector_store.py</code>: ChromaDB storage and search</li>
+                        <li><code>rag_pipeline.py</code>: retrieval and prompt building</li>
                     </ul>
 
-                    <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p><strong>Enterprise knowledge search engine</strong> - This project demonstrates how modern data engineering practices unlock value through real-time insights, operational excellence, and scalable infrastructure.</p>
+                    <h2 class="h4 mt-5 mb-3">Limitations</h2>
+                    <ul>
+                        <li>Stops at prompt building; no LLM is called yet.</li>
+                        <li>Retrieval quality was not evaluated.</li>
+                    </ul>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
-                        <div class="card-body font-monospace small">
-                            ChromaDB + LangChain → Semantic Search
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white"><h5 class="mb-0">Key Metric</h5></div>
-                        <div class="card-body">
-                            <h4 class="text-success mb-0"><10 Sec Queries</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header bg-info text-white"><h5 class="mb-0">Links</h5></div>
-                        <div class="card-body">
-                            <a href="https://github.com/tutarzeliha-ctrl" class="btn btn-sm btn-outline-primary w-100 mb-2"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="btn btn-sm btn-outline-primary w-100"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        </div>
+                    <div class="project-card">
+                        <h3 class="h6 fw-bold mb-3">Links</h3>
+                        <a href="https://github.com/tutarzeliha-ctrl/local-rag-pipeline" target="_blank" class="btn btn-primary w-100 mb-2"><i class="fab fa-github"></i> View code on GitHub</a>
+                        <p class="small text-muted mt-3 mb-0">Setup steps are in the repository README.</p>
                     </div>
                 </div>
             </div>
@@ -89,7 +68,7 @@
     <footer class="bg-dark text-light py-4 mt-5">
         <div class="container-lg">
             <div class="row">
-                <div class="col-md-6"><p class="mb-0">&copy; 2024 Zeliha Tutar. All rights reserved.</p></div>
+                <div class="col-md-6"><p class="mb-0">&copy; 2026 Zeliha Tutar. All rights reserved.</p></div>
                 <div class="col-md-6 text-md-end">
                     <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="text-light me-3">LinkedIn</a>
                     <a href="https://github.com/tutarzeliha-ctrl" class="text-light me-3">GitHub</a>

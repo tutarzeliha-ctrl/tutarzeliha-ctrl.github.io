@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Data Observability - Zeliha Tutar</title>
+    <title>Data Quality &amp; Observability Pipeline - Zeliha Tutar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -12,9 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-lg">
             <a class="navbar-brand fw-bold" href="../index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
@@ -29,61 +27,42 @@
     <section class="bg-light py-5">
         <div class="container-lg">
             <a href="../projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-            <h1 class="display-5 fw-bold mb-3">Enterprise Data Observability</h1>
-            <p class="lead text-muted">Airflow + Streamlit + Slack Webhooks Data Pipeline</p>
-            <span class="badge bg-primary">99.9% Reliability</span>
+            <h1 class="display-5 fw-bold mb-3">Data Quality &amp; Observability Pipeline</h1>
+            <p class="lead text-muted mb-2">Airflow + YAML quality checks → Streamlit dashboard + Slack alerts</p>
+            <span class="badge bg-secondary">Portfolio project · runs locally · synthetic data</span>
         </div>
     </section>
 
     <section class="py-5">
         <div class="container-lg">
-            <div class="row">
+            <div class="row g-5">
                 <div class="col-lg-8">
-                    <h2 class="h3 mb-4">Executive Summary & Problem</h2>
-                    <p>Modern enterprise data platforms face critical challenges: handling massive volumes at scale, maintaining zero-defect data quality, tracking schema evolution, and delivering actionable operational insights. This project addresses these fundamental enterprise needs through a production-grade automated pipeline.</p>
+                    <h2 class="h4 mb-3">What it does</h2>
+                    <p>An Airflow DAG runs data quality checks defined in a YAML file (null rates, schema, distribution). Results feed a Streamlit health dashboard, and failed checks can trigger a Slack webhook.</p>
 
-                    <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built an end-to-end data quality validation and governance pipeline using Apache Airflow for orchestration, declarative YAML/SQL rules for validation, Streamlit for real-time observability dashboards, and Slack webhooks for immediate incident management.</p>
-                    
-                    <h2 class="h3 mb-4 mt-5">Architecture</h2>
-                    <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        [ Raw Data Ingestion ] ──> [ Airflow Orchestration & Quality Checks ] ──> [ Audit & Governance Logs ]<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──> [ Streamlit Health Dashboard ]<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──> [ Real-time Slack Webhook Alerts ]
-                    </div>
-
-                    <h2 class="h3 mb-4 mt-5">Key Features</h2>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Data Quality Validation:</strong> Declarative SQL & Python rules verifying null rates and schema integrity.</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Orchestration & Workflow Management:</strong> Robust Apache Airflow DAG execution with custom retry policies.</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Real-time Observability:</strong> Streamlit-powered dashboard tracking pipeline telemetry and health metrics.</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Automated Incident Notification:</strong> Immediate webhook dispatches to Slack upon data quality violations.</li>
+                    <h2 class="h4 mt-5 mb-3">What is in the repository</h2>
+                    <ul>
+                        <li><code>dags/data_pipeline_dag.py</code>: Airflow DAG</li>
+                        <li><code>quality_checks/checks.yml</code>: declarative check rules</li>
+                        <li><code>dashboard/app.py</code>: Streamlit dashboard</li>
+                        <li><code>include/slack_notifier.py</code>: Slack webhook helper</li>
+                        <li><code>tests/test_pipeline.py</code> and a GitHub Actions CI workflow</li>
+                        <li><code>docs/data_dictionary.md</code>: data dictionary</li>
                     </ul>
 
-                    <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p><strong>Proactive Quality Governance:</strong> Achieves 99.9% pipeline reliability by catching data corruption and schema drift before impacting downstream consumers, eliminating operational blind spots across the enterprise stack.</p>
+                    <h2 class="h4 mt-5 mb-3">Limitations</h2>
+                    <ul>
+                        <li>Synthetic data from <code>generate_data.py</code>.</li>
+                        <li>Reliability and uptime were not measured.</li>
+                    </ul>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
-                        <div class="card-body font-monospace small">
-                            Python, Apache Airflow, Streamlit, Slack Webhooks, Docker
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white"><h5 class="mb-0">Key Metric</h5></div>
-                        <div class="card-body">
-                            <h4 class="text-success mb-0">99.9% Reliability</h4>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header bg-info text-white"><h5 class="mb-0">Links</h5></div>
-                        <div class="card-body">
-                            <a href="https://github.com/tutarzeliha-ctrl/enterprise-data-observability" class="btn btn-sm btn-outline-primary w-100 mb-2" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                            <a href="https://enterprise-data-observability-3jqvuelxyojj9rrakcncbw.streamlit.app/" class="btn btn-sm btn-outline-success w-100 mb-2" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://www.youtube.com/watch?v=PZubpk3ZDHY" class="btn btn-sm btn-outline-danger w-100" target="_blank"><i class="fab fa-youtube"></i> Video Walkthrough</a>
-                        </div>
+                    <div class="project-card">
+                        <h3 class="h6 fw-bold mb-3">Links</h3>
+                        <a href="https://github.com/tutarzeliha-ctrl/enterprise-data-observability" target="_blank" class="btn btn-primary w-100 mb-2"><i class="fab fa-github"></i> View code on GitHub</a>
+                        <a href="https://enterprise-data-observability-3jqvuelxyojj9rrakcncbw.streamlit.app/" target="_blank" class="btn btn-outline-primary w-100 mb-2"><i class="fas fa-play"></i> Live demo (Streamlit)</a>
+                        <a href="https://www.youtube.com/watch?v=PZubpk3ZDHY" target="_blank" class="btn btn-outline-primary w-100 mb-2"><i class="fab fa-youtube"></i> Video walkthrough</a>
+                        <p class="small text-muted mt-3 mb-0">Setup steps are in the repository README.</p>
                     </div>
                 </div>
             </div>

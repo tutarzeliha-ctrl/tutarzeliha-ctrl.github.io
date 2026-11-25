@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Fraud Detection - Zeliha Tutar</title>
+    <title>Real-Time Fraud Detection (in progress) - Zeliha Tutar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-lg">
-            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand fw-bold" href="../index.html"><i class="fas fa-chart-line"></i> Zeliha Tutar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -28,61 +26,44 @@
 
     <section class="bg-light py-5">
         <div class="container-lg">
-            <a href="projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-            <h1 class="display-5 fw-bold mb-3">Real-Time Fraud Detection</h1>
-            <p class="lead text-muted">PostgreSQL CDC → Kafka → Spark Streaming → Prefect</p>
-            <span class="badge bg-primary">98% Accuracy</span>
-            <span class="badge bg-primary ms-2">&lt;100ms Latency</span>
+            <a href="../projects.html" class="text-decoration-none mb-3 d-inline-block"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <h1 class="display-5 fw-bold mb-3">Real-Time Fraud Detection (in progress)</h1>
+            <p class="lead text-muted mb-2">Python producer → Kafka → PySpark Structured Streaming → PostgreSQL → Streamlit</p>
+            <span class="badge bg-secondary">Portfolio project · runs locally · synthetic data</span>
         </div>
     </section>
 
     <section class="py-5">
         <div class="container-lg">
-            <div class="row">
+            <div class="row g-5">
                 <div class="col-lg-8">
-                    <h2 class="h3 mb-4">The Problem</h2>
-                    <p>E-commerce fraud happens in milliseconds. Traditional batch processing detects fraud hours later, after damage is done. We needed real-time detection: analyzing every transaction as it happens, catching fraudsters before they strike.</p>
+                    <h2 class="h4 mb-3">What it does</h2>
+                    <p>A Python producer generates synthetic payment transactions and sends them to Kafka. A PySpark Structured Streaming job parses the events with a fixed schema and writes each micro-batch to PostgreSQL. A Streamlit dashboard reads the stored transactions.</p>
 
-                    <h2 class="h3 mb-4 mt-5">The Solution</h2>
-                    <p>Built a streaming pipeline using CDC (Change Data Capture) to stream transactions in real-time from PostgreSQL through Kafka. Spark Streaming processes each event, scoring it against ML models with <100ms latency. Prefect orchestrates the entire workflow with automatic retries and alerting.</p>
-                    
-                    <h2 class="h3 mb-4 mt-5">Architecture</h2>
-                    <div class="bg-light p-4 rounded mb-4 font-monospace small">
-                        PostgreSQL → Debezium CDC → Kafka Topic → Spark Streaming<br/>
-                        ↓<br/>
-                        ML Model Scoring → Redis Cache → Alert System → Dashboard
-                    </div>
-
-                    <h2 class="h3 mb-4 mt-5">Key Metrics</h2>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>98% Accuracy:</strong> Catches fraud while minimizing false positives</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>&lt;100ms Latency:</strong> Sub-second decision making</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>10M+ Transactions/Day:</strong> Processes massive volume without slowdown</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>99.9% Uptime:</strong> Production-ready reliability</li>
+                    <h2 class="h4 mt-5 mb-3">What is in the repository</h2>
+                    <ul>
+                        <li><code>producer.py</code>: synthetic transaction generator</li>
+                        <li><code>spark/streaming_processor.py</code>: Kafka → PostgreSQL streaming job (<code>foreachBatch</code>)</li>
+                        <li><code>prefect/flows.py</code>: Prefect flow</li>
+                        <li><code>docker-compose.yml</code>: Kafka (KRaft) and PostgreSQL</li>
+                        <li><code>app.py</code>: Streamlit dashboard</li>
+                        <li><code>tests/test_processor.py</code>: unit tests for the processor</li>
                     </ul>
 
-                    <h2 class="h3 mb-4 mt-5">Business Impact</h2>
-                    <p>Prevented $2M+ in fraudulent transactions in first 6 months. Reduced customer disputes by 87%. Enabled real-time risk-based decisioning for promotional campaigns.</p>
+                    <h2 class="h4 mt-5 mb-3">Limitations</h2>
+                    <ul>
+                        <li>Fraud rules are not implemented yet: the job stores every transaction; scoring is the next step.</li>
+                        <li>Synthetic data; latency was not measured.</li>
+                        <li>Runs on a local Docker setup only.</li>
+                    </ul>
+                    <h2 class="h4 mt-5 mb-3">Related repository</h2>
+                    <p><a href="https://github.com/tutarzeliha-ctrl/real-time-ecommerce-fraud-detection" target="_blank">real-time-ecommerce-fraud-detection</a>: a second version of the same idea, using PostgreSQL → Debezium CDC → Kafka → Flink SQL → Streamlit.</p>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white"><h5 class="mb-0">Tech Stack</h5></div>
-                        <div class="card-body font-monospace small">
-                            PostgreSQL<br/>
-                            Debezium CDC<br/>
-                            Apache Kafka<br/>
-                            PySpark Streaming<br/>
-                            MLflow<br/>
-                            Prefect<br/>
-                            Redis<br/>
-                            Slack Integration
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white"><h5 class="mb-0">Results</h5></div>
-                        <div class="card-body">
-                            <h4 class="text-success mb-0">98% Detection Rate</h4>
-                        </div>
+                    <div class="project-card">
+                        <h3 class="h6 fw-bold mb-3">Links</h3>
+                        <a href="https://github.com/tutarzeliha-ctrl/real-time-fraud-detection" target="_blank" class="btn btn-primary w-100 mb-2"><i class="fab fa-github"></i> View code on GitHub</a>
+                        <p class="small text-muted mt-3 mb-0">Setup steps are in the repository README.</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +73,7 @@
     <footer class="bg-dark text-light py-4 mt-5">
         <div class="container-lg">
             <div class="row">
-                <div class="col-md-6"><p class="mb-0">&copy; 2024 Zeliha Tutar. All rights reserved.</p></div>
+                <div class="col-md-6"><p class="mb-0">&copy; 2026 Zeliha Tutar. All rights reserved.</p></div>
                 <div class="col-md-6 text-md-end">
                     <a href="https://www.linkedin.com/in/zeliha-tutar-35a3013aa/" class="text-light me-3">LinkedIn</a>
                     <a href="https://github.com/tutarzeliha-ctrl" class="text-light me-3">GitHub</a>
