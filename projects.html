@@ -27,7 +27,7 @@
     <section class="bg-light py-5">
         <div class="container-lg">
             <h1 class="display-4 fw-bold mb-3">Projects</h1>
-            <p class="lead text-muted">Portfolio projects built locally or on free tiers. Each one links to its code; numbers appear only where they were measured.</p>
+            <p class="lead text-muted">Portfolio projects built locally or on free tiers, mostly on synthetic data. Every project links to its public repository; numbers appear only where they were measured.</p>
         </div>
     </section>
 
@@ -58,203 +58,126 @@
                 </div>
             </div>
 
-            <!-- TIER 1 -->
             <div class="mb-5">
-                <h2 class="h3 mb-4 pb-3 border-bottom">Real-Time Streaming</h2>
+                <h2 class="h3 mb-4 pb-3 border-bottom">Streaming &amp; CDC</h2>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-                            <h5>Real-Time Fraud Detection</h5>
-                            <p class="small text-muted">PostgreSQL CDC → Kafka → Spark</p>
-                            <a href="projects/fraud-detection.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card h-100">
                             <div class="project-icon"><i class="fas fa-stream"></i></div>
                             <h5>Event-Driven CDC Dashboard</h5>
-                            <p class="small text-muted">PostgreSQL CDC → Kafka → Debezium</p>
-                            <a href="projects/cdc-dashboard.html" class="btn btn-sm btn-primary mt-3">View Details</a>
+                            <p class="small text-muted">PostgreSQL → Debezium → Kafka → Streamlit</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/cdc-dashboard.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/event-driven-cdc-pipeline" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h5>Real-Time Fraud Detection (in progress)</h5>
+                            <p class="small text-muted">Kafka → PySpark Streaming → PostgreSQL</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/fraud-detection.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/real-time-fraud-detection" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card h-100">
                             <div class="project-icon"><i class="fas fa-database"></i></div>
-                            <h5>Vector Streaming & ChromaDB</h5>
-                            <p class="small text-muted">Kafka → PySpark → ChromaDB</p>
-                            <a href="projects/vector-streaming.html" class="btn btn-sm btn-primary mt-3">View Details</a>
+                            <h5>Vector Streaming &amp; ChromaDB</h5>
+                            <p class="small text-muted">Kafka → Sentence-Transformers → ChromaDB</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/vector-streaming.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/real-time-vector-streaming" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card h-100">
                             <div class="project-icon"><i class="fas fa-water"></i></div>
-                            <h5>Streaming Clickstream Lakehouse</h5>
-                            <p class="small text-muted">Apache Flink SQL → Parquet → MinIO</p>
-                            <a href="projects/clickstream-lakehouse.html" class="btn btn-sm btn-primary mt-3">View Details</a>
+                            <h5>Streaming Clickstream Lakehouse (experimental)</h5>
+                            <p class="small text-muted">Flink SQL → Apache Paimon → MinIO</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/clickstream-lakehouse.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/streaming-clickstream-lakehouse" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- TIER 2 -->
             <div class="mb-5">
-                <h2 class="h3 mb-4 pb-3 border-bottom">ML & Prediction</h2>
+                <h2 class="h3 mb-4 pb-3 border-bottom">Data Quality &amp; Orchestration</h2>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-brain"></i></div>
-                            <h5>Supply Chain Delay Predictor</h5>
-                            <p class="small text-muted">Kafka → PySpark ML → LLM</p>
-                            <a href="projects/supply-chain.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
-                            <h5>SaaS Churn Prediction</h5>
-                            <p class="small text-muted">Python ML + Reverse ETL</p>
-                            <a href="projects/churn-prediction.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-tag"></i></div>
-                            <h5>E-Commerce Dynamic Pricing</h5>
-                            <p class="small text-muted">Web Scraping → BigQuery → LLM</p>
-                            <a href="projects/dynamic-pricing.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
-                            <h5>Healthcare Triage Risk</h5>
-                            <p class="small text-muted">Sensor Data → Prefect → Alerts</p>
-                            <a href="projects/healthcare-triage.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TIER 3 -->
-            <div class="mb-5">
-                <h2 class="h3 mb-4 pb-3 border-bottom">Data Quality</h2>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-robot"></i></div>
-                            <h5>Agentic Data Quality</h5>
-                            <p class="small text-muted">Streamlit + Groq (LLM) + Pandas, synthetic data</p>
-                            <a href="projects/data-quality.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card h-100">
                             <div class="project-icon"><i class="fas fa-eye"></i></div>
-                            <h5>Enterprise Data Observability</h5>
-                            <p class="small text-muted">Snowflake + Databricks</p>
-                            <a href="projects/observability.html" class="btn btn-sm btn-primary mt-3">View Details</a>
+                            <h5>Data Quality &amp; Observability Pipeline</h5>
+                            <p class="small text-muted">Airflow + YAML checks → Streamlit, Slack</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/observability.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/enterprise-data-observability" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card h-100">
                             <div class="project-icon"><i class="fas fa-medal"></i></div>
-                            <h5>Medallion Architecture</h5>
-                            <p class="small text-muted">Bronze/Silver/Gold → Airflow</p>
-                            <a href="projects/medallion.html" class="btn btn-sm btn-primary mt-3">View Details</a>
+                            <h5>Medallion Pipeline with Airflow</h5>
+                            <p class="small text-muted">Airflow → Polars → Parquet → DuckDB</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/medallion.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/data-quality-airflow-pipeline" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-robot"></i></div>
+                            <h5>Agentic Data Quality (prototype)</h5>
+                            <p class="small text-muted">Streamlit + Groq (LLM) + Pandas, synthetic data</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/data-quality.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/agentic-data-quality" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- TIER 4 -->
             <div class="mb-5">
-                <h2 class="h3 mb-4 pb-3 border-bottom">Analytics</h2>
+                <h2 class="h3 mb-4 pb-3 border-bottom">Analytics &amp; Retrieval</h2>
                 <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card h-100">
+                            <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <h5>Sepetix: dbt Analytics</h5>
+                            <p class="small text-muted">dbt staging/marts on e-commerce orders</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="https://github.com/tutarzeliha-ctrl/sepetix-dbt-analytics" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card h-100">
                             <div class="project-icon"><i class="fas fa-users"></i></div>
-                            <h5>E-Commerce Retention</h5>
+                            <h5>E-Commerce Retention Analytics</h5>
                             <p class="small text-muted">dbt → BigQuery → Streamlit</p>
-                            <a href="projects/retention.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-mouse"></i></div>
-                            <h5>Clickstream Recommendations</h5>
-                            <p class="small text-muted">Streamlit → Real-Time</p>
-                            <a href="projects/recommendations.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TIER 5 -->
-            <div class="mb-5">
-                <h2 class="h3 mb-4 pb-3 border-bottom">LLM Integration</h2>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-comments"></i></div>
-                            <h5>Customer Sentiment Analysis</h5>
-                            <p class="small text-muted">NLP + LLM → Classification</p>
-                            <a href="projects/sentiment.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-images"></i></div>
-                            <h5>Vision AI Recommendations</h5>
-                            <p class="small text-muted">Vision + LLM → Matching</p>
-                            <a href="projects/vision-ai.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <h5>HR Talent Analyzer</h5>
-                            <p class="small text-muted">LLM → CV Parsing</p>
-                            <a href="projects/hr-talent.html" class="btn btn-sm btn-primary mt-3">View Details</a>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/retention.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/ecommerce-retention-analytics" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="project-card h-100">
                             <div class="project-icon"><i class="fas fa-search"></i></div>
                             <h5>Local RAG Pipeline</h5>
-                            <p class="small text-muted">ChromaDB + LangChain</p>
-                            <a href="projects/rag-pipeline.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TIER 6 -->
-            <div class="mb-5">
-                <h2 class="h3 mb-4 pb-3 border-bottom">Advanced Systems</h2>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-tools"></i></div>
-                            <h5>IoT Predictive Maintenance</h5>
-                            <p class="small text-muted">Kafka + Spark → Alerts</p>
-                            <a href="projects/iot-maintenance.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-bolt"></i></div>
-                            <h5>Renewable Energy Grid</h5>
-                            <p class="small text-muted">Forecasting → Optimization</p>
-                            <a href="projects/energy-grid.html" class="btn btn-sm btn-primary mt-3">View Details</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card h-100">
-                            <div class="project-icon"><i class="fas fa-shield-virus"></i></div>
-                            <h5>Threat Intelligence</h5>
-                            <p class="small text-muted">Debezium + Spark → Alerts</p>
-                            <a href="projects/threat-intelligence.html" class="btn btn-sm btn-primary mt-3">View Details</a>
+                            <p class="small text-muted">LangChain → local embeddings → ChromaDB</p>
+                            <div class="d-flex gap-2 flex-wrap mt-3">
+                                <a href="projects/rag-pipeline.html" class="btn btn-sm btn-primary">View Details</a>
+                                <a href="https://github.com/tutarzeliha-ctrl/local-rag-pipeline" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </div>
                 </div>
